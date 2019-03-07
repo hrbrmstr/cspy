@@ -1,25 +1,26 @@
 Package: crsspy
 Type: Package
-Title: crsspy title goes here otherwise CRAN checks fail
-Version: 0.1.0
+Title: Content Security Policy Decomposer & Evaluator
+Version: 2.6.0
 Date: 2019-03-06
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640"))
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: A good description goes here otherwise CRAN checks fail.
+Description: Methods are provided to decompose, display, and validate
+    content security policy header values. Wraps the 'Shape Security'
+    'salvation' Java library (<https://github.com/shapesecurity/salvation>).
+    Package version tracks 'salvation' Java archive version.
 URL: https://gitlab.com/hrbrmstr/crsspy
 BugReports: https://gitlab.com/hrbrmstr/crsspy/issues
 Encoding: UTF-8
-License: AGPL
+License: Apache License (>= 2.0)
 Suggests:
     testthat,
     covr
 Depends:
-    R (>= 3.2.0)
-Imports:
-    httr,
-    jsonlite
+    R (>= 3.2.0),
+    rJava
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1

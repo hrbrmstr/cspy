@@ -4,13 +4,15 @@
 \name{crsspy}
 \alias{crsspy}
 \alias{crsspy-package}
-\title{...}
+\title{Content Security Policy Decomposer & Evaluator}
 \description{
 \itemize{
 \item URL: \url{https://gitlab.com/hrbrmstr/crsspy}
 \item BugReports: \url{https://gitlab.com/hrbrmstr/crsspy/issues}
+\item Javadoc: \url{https://www.javadoc.io/doc/com.shapesecurity/salvation/2.6.0}
 }
 }
 \author{
 Bob Rudis (bob@rud.is)
 }
+\keyword{internal}

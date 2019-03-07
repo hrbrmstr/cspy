@@ -14,6 +14,8 @@ options(width=120)
 
 # crsspy
 
+Content Security Policy Decomposer & Evaluator
+
 ## Description
 
 ## What's Inside The Tin
@@ -23,9 +25,7 @@ The following functions are implemented:
 ## Installation
 
 ```{r install-ex, eval=FALSE}
-devtools::install_git("https://gitlab.com/hrbrmstr/crsspy.git")
-# or
-devtools::install_github("hrbrmstr/crsspy")
+install.packages("crsspy", repos = "https://cinc.rud.is/")
 ```
 
 ## Usage
@@ -46,5 +46,5 @@ cloc::cloc_pkg_md()
 
 ## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). 
 By participating in this project you agree to abide by its terms.
