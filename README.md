@@ -1,9 +1,9 @@
 
 [![Travis-CI Build
-Status](https://travis-ci.org/hrbrmstr/crsspy.svg?branch=master)](https://travis-ci.org/hrbrmstr/crsspy)
+Status](https://travis-ci.org/hrbrmstr/cspy.svg?branch=master)](https://travis-ci.org/hrbrmstr/cspy)
 [![Coverage
-Status](https://codecov.io/gh/hrbrmstr/crsspy/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/crsspy)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/crsspy)](https://cran.r-project.org/package=crsspy)
+Status](https://codecov.io/gh/hrbrmstr/cspy/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/cspy)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/cspy)](https://cran.r-project.org/package=cspy)
 
 # cspy
 
