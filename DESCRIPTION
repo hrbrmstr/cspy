@@ -1,4 +1,4 @@
-Package: crsspy
+Package: cspy
 Type: Package
 Title: Content Security Policy Decomposer & Evaluator
 Version: 2.6.0
@@ -12,8 +12,8 @@ Description: Methods are provided to decompose, display, and validate
     content security policy header values. Wraps the 'Shape Security'
     'salvation' Java library (<https://github.com/shapesecurity/salvation>).
     Package version tracks 'salvation' Java archive version.
-URL: https://gitlab.com/hrbrmstr/crsspy
-BugReports: https://gitlab.com/hrbrmstr/crsspy/issues
+URL: https://gitlab.com/hrbrmstr/cspy
+BugReports: https://gitlab.com/hrbrmstr/cspy/issues
 Encoding: UTF-8
 License: Apache License (>= 2.0)
 Suggests:

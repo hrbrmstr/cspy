@@ -12,7 +12,7 @@ options(width=120)
 [![Coverage Status](https://codecov.io/gh/hrbrmstr/crsspy/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/crsspy)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/crsspy)](https://cran.r-project.org/package=crsspy)
 
-# crsspy
+# cspy
 
 Content Security Policy Decomposer & Evaluator
 
@@ -25,16 +25,16 @@ The following functions are implemented:
 ## Installation
 
 ```{r install-ex, eval=FALSE}
-install.packages("crsspy", repos = "https://cinc.rud.is/")
+install.packages("cspy", repos = "https://cinc.rud.is/")
 ```
 
 ## Usage
 
 ```{r lib-ex}
-library(crsspy)
+library(cspy)
 
 # current version
-packageVersion("crsspy")
+packageVersion("cspy")
 
 ```
 
