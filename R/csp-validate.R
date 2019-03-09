@@ -79,6 +79,6 @@ validate_csp <- function(csp) {
 
   class(out) <- c("tbl_df", "tbl", "data.frame")
 
-  out
+  invisible(out)
 
 }

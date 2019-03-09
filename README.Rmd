@@ -1,7 +1,7 @@
 ---
 output: rmarkdown::github_document
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 ```{r pkg-knitr-opts, include=FALSE}
 knitr$opts_chunk$set(collapse=TRUE, fig.retina=2, message=FALSE, warning=FALSE)
@@ -18,9 +18,42 @@ Content Security Policy Decomposer & Evaluator
 
 ## Description
 
+Methods are provided to decompose, display, and validate
+content security policy header values. Wraps the 'Shape Security'
+'salvation' Java library (<https://github.com/shapesecurity/salvation>).
+Package version tracks 'salvation' Java archive version.
+
 ## What's Inside The Tin
 
 The following functions are implemented:
+
+Core:
+
+- `fetch_csp`:  Fetch and/or parse a content security policy header value
+- `parse_csp`:  Fetch and/or parse a content security policy header value
+- `validate_csp`: Validate a CSP
+
+Testers:
+
+- `allows_child_from_source`: Tests for what a parsed CSP allows
+- `allows_connect_to`:  Tests for what a parsed CSP allows
+- `allows_font_from_source`:  Tests for what a parsed CSP allows
+- `allows_form_action`: Tests for what a parsed CSP allows
+- `allows_frame_ancestor`:  Tests for what a parsed CSP allows
+- `allows_frame_from_source`: Tests for what a parsed CSP allows
+- `allows_manifest_from_source`:  Tests for what a parsed CSP allows
+- `allows_media_from_source`: Tests for what a parsed CSP allows
+- `allows_navigation`:  Tests for what a parsed CSP allows
+- `allows_object_from_source`:  Tests for what a parsed CSP allows
+- `allows_prefetch_from_source`:  Tests for what a parsed CSP allows
+- `allows_script_from_source`:  Tests for what a parsed CSP allows
+- `allows_script_with_nonce`: Tests for what a parsed CSP allows
+- `allows_style_from_source`: Tests for what a parsed CSP allows
+- `allows_style_with_nonce`:  Tests for what a parsed CSP allows
+- `allows_unsafe_inline_script`:  Tests for what a parsed CSP allows
+- `allows_unsafe_inline_style`: Tests for what a parsed CSP allows
+- `allows_worker_from_source`:  Tests for what a parsed CSP allows
+- `as.data.frame.csp`:  Convert a parsed CSP into a data frame of directives and values
 
 ## Installation
 

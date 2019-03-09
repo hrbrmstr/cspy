@@ -1,5 +1,10 @@
 #' Content Security Policy Decomposer & Evaluator
 #'
+#' Methods are provided to decompose, display, and validate
+#' content security policy header values. Wraps the 'Shape Security'
+#' 'salvation' Java library (<https://github.com/shapesecurity/salvation>).
+#' Package version tracks 'salvation' Java archive version.
+#'
 #' - URL: <https://gitlab.com/hrbrmstr/cspy>
 #' - BugReports: <https://gitlab.com/hrbrmstr/cspy/issues>
 #' - Javadoc: <https://www.javadoc.io/doc/com.shapesecurity/salvation/2.6.0>
