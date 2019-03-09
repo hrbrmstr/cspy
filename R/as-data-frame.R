@@ -28,7 +28,9 @@ as.data.frame.csp <- function(x, row.names=NULL, optional=NULL, include_origin =
     })
   ) -> xdf
 
-  if ((!is.na(x$origin)) && include_origin) xdf[["origin"]] <- x$origin
+  if (nrow(xdf) > 0) {
+    if ((!is.na(x$origin)) && include_origin) xdf[["origin"]] <- x$origin
+  }
 
   class(xdf) <- c("tbl_df", "tbl", "data.frame")
 

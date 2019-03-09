@@ -15,3 +15,6 @@ depending on the method used)}
 \description{
 Does a URL have a content security policy?
 }
+\examples{
+has_csp("https://rud.is/")
+}

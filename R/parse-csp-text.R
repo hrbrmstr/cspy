@@ -4,6 +4,8 @@
 #' @param method method to use fetch CSP (sites may change headers returned
 #'        depending on the method used)
 #' @export
+#' @examples
+#' has_csp("https://rud.is/")
 has_csp <- function(URL, method = c("head", "get")) {
 
   method <- match.arg(tolower(method), c("head", "get"))
@@ -32,6 +34,8 @@ has_csp <- function(URL, method = c("head", "get")) {
 #'        depending on the method used)
 #' @references [Content Security Policy Level 3](https://www.w3.org/TR/CSP3/)
 #' @export
+#' @examples
+#' parse_csp("default-src: 'none'", "https://example.com")
 parse_csp <- function(csp_text, origin_url) {
 
   ParserWithLocation <- J("com.shapesecurity.salvation.ParserWithLocation")
@@ -50,6 +54,8 @@ parse_csp <- function(csp_text, origin_url) {
 
 #' @rdname parse_csp
 #' @export
+#' @examples
+#' fetch_csp("https://rud.is/")
 fetch_csp <- function(origin_url, method = c("head", "get")) {
 
   method <- match.arg(tolower(method), c("head", "get"))

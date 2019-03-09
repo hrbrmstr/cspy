@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 ```{r pkg-knitr-opts, include=FALSE}
-knitr$opts_chunk$set(collapse=TRUE, fig.retina=2, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(collapse=TRUE, fig.retina=2, message=FALSE, warning=FALSE)
 options(width=120)
 ```
 
@@ -29,31 +29,44 @@ The following functions are implemented:
 
 Core:
 
-- `fetch_csp`:  Fetch and/or parse a content security policy header value
-- `parse_csp`:  Fetch and/or parse a content security policy header value
-- `validate_csp`: Validate a CSP
+- `fetch_csp`:	Fetch and/or parse a content security policy header value
+- `has_csp`:	Does a URL have a content security policy?
+- `parse_csp`:	Fetch and/or parse a content security policy header value
+- `validate_csp`:	Validate a CSP
+- `as.data.frame.csp`:	Convert a parsed CSP into a data frame of directives and values
+
+Security/Safety Checks:
+
+- `check_deprecated`:	Tests for insecure CSP settings
+- `check_ip_source`:	Tests for insecure CSP settings
+- `check_missing_directives`:	Tests for insecure CSP settings
+- `check_nonce_length`:	Tests for insecure CSP settings
+- `check_plain_url_schemes`:	Tests for insecure CSP settings
+- `check_script_unsafe_eval`:	Tests for insecure CSP settings
+- `check_script_unsafe_inline`:	Tests for insecure CSP settings
+- `check_src_http`:	Tests for insecure CSP settings
+- `check_wildcards`:	Tests for insecure CSP settings
 
 Testers:
 
-- `allows_child_from_source`: Tests for what a parsed CSP allows
-- `allows_connect_to`:  Tests for what a parsed CSP allows
-- `allows_font_from_source`:  Tests for what a parsed CSP allows
-- `allows_form_action`: Tests for what a parsed CSP allows
-- `allows_frame_ancestor`:  Tests for what a parsed CSP allows
-- `allows_frame_from_source`: Tests for what a parsed CSP allows
-- `allows_manifest_from_source`:  Tests for what a parsed CSP allows
-- `allows_media_from_source`: Tests for what a parsed CSP allows
-- `allows_navigation`:  Tests for what a parsed CSP allows
-- `allows_object_from_source`:  Tests for what a parsed CSP allows
-- `allows_prefetch_from_source`:  Tests for what a parsed CSP allows
-- `allows_script_from_source`:  Tests for what a parsed CSP allows
-- `allows_script_with_nonce`: Tests for what a parsed CSP allows
-- `allows_style_from_source`: Tests for what a parsed CSP allows
-- `allows_style_with_nonce`:  Tests for what a parsed CSP allows
-- `allows_unsafe_inline_script`:  Tests for what a parsed CSP allows
-- `allows_unsafe_inline_style`: Tests for what a parsed CSP allows
-- `allows_worker_from_source`:  Tests for what a parsed CSP allows
-- `as.data.frame.csp`:  Convert a parsed CSP into a data frame of directives and values
+- `allows_child_from_source`:	Tests for what a parsed CSP allows
+- `allows_connect_to`:	Tests for what a parsed CSP allows
+- `allows_font_from_source`:	Tests for what a parsed CSP allows
+- `allows_form_action`:	Tests for what a parsed CSP allows
+- `allows_frame_ancestor`:	Tests for what a parsed CSP allows
+- `allows_frame_from_source`:	Tests for what a parsed CSP allows
+- `allows_manifest_from_source`:	Tests for what a parsed CSP allows
+- `allows_media_from_source`:	Tests for what a parsed CSP allows
+- `allows_navigation`:	Tests for what a parsed CSP allows
+- `allows_object_from_source`:	Tests for what a parsed CSP allows
+- `allows_prefetch_from_source`:	Tests for what a parsed CSP allows
+- `allows_script_from_source`:	Tests for what a parsed CSP allows
+- `allows_script_with_nonce`:	Tests for what a parsed CSP allows
+- `allows_style_from_source`:	Tests for what a parsed CSP allows
+- `allows_style_with_nonce`:	Tests for what a parsed CSP allows
+- `allows_unsafe_inline_script`:	Tests for what a parsed CSP allows
+- `allows_unsafe_inline_style`:	Tests for what a parsed CSP allows
+- `allows_worker_from_source`:	Tests for what a parsed CSP allows
 
 ## Installation
 
@@ -65,10 +78,41 @@ install.packages("cspy", repos = "https://cinc.rud.is/")
 
 ```{r lib-ex}
 library(cspy)
+library(tibble) # for printing
 
 # current version
 packageVersion("cspy")
 
+```
+
+```{r one}
+has_csp("https://community.rstudio.com")
+
+csp <- fetch_csp("https://community.rstudio.com")
+
+csp
+
+(csp_df <- as.data.frame(csp))
+
+allows_unsafe_inline_script(csp)
+
+check_deprecated(csp_df)
+
+check_ip_source(csp_df)
+
+check_missing_directives(csp_df)
+
+check_nonce_length(csp_df)
+
+check_plain_url_schemes(csp_df)
+
+check_script_unsafe_eval(csp_df)
+
+check_script_unsafe_inline(csp_df)
+
+check_src_http(csp_df)
+
+check_wildcards(csp_df)
 ```
 
 ## crsspy Metrics

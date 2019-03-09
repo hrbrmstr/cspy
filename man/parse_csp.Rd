@@ -22,6 +22,10 @@ depending on the method used)}
 Use \code{\link[=fetch_csp]{fetch_csp()}} to load & parse a CSP from a remote site. Use \code{\link[=parse_csp]{parse_csp()}}
 to parse an already fetched or composed CSP.
 }
+\examples{
+parse_csp("default-src: 'none'", "https://example.com")
+fetch_csp("https://rud.is/")
+}
 \references{
 \href{https://www.w3.org/TR/CSP3/}{Content Security Policy Level 3}
 }

@@ -1,2 +1,2 @@
 library(testthat)
-test_check("crsspy")
+test_check("cspy")

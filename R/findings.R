@@ -15,17 +15,6 @@ mk_finding <- function(category, message, severity, where) {
 #' @name csp_security_checkers
 NULL
 
-
-# Checks if passed csp allows inline scripts.
-#' @rdname csp_security_checkers
-#' @param csp_df Preferably a CSP data frame (made with [as.data.frame()]) but
-#'        can be a raw CSP object. Passing in a pre-made data frame will be faster
-#'        when using multiple CSP security checker functions.
-#' @return a `csp_finding` or `csp_findings_list` object containing one or more `csp_finding`
-#'         objects. Each `csp_finding` object will have the `category`, `severity`,
-#'         `message` and `where` the violation(s) occurred.
-#' @references [CSP With Google](https://csp.withgoogle.com/docs/index.html)
-#' @export
 ensure_csp_df <- function(csp_df) {
   if (inherits(csp_df, "csp")) {
     as.data.frame(csp_df)
@@ -38,8 +27,16 @@ ensure_csp_df <- function(csp_df) {
   }
 }
 
-# Checks if passed csp allows eval in scripts.
+# Checks if passed csp allows inline scripts.
+
 #' @rdname csp_security_checkers
+#' @param csp_df Preferably a CSP data frame (made with [as.data.frame()]) but
+#'        can be a raw CSP object. Passing in a pre-made data frame will be faster
+#'        when using multiple CSP security checker functions.
+#' @return a `csp_finding` or `csp_findings_list` object containing one or more `csp_finding`
+#'         objects. Each `csp_finding` object will have the `category`, `severity`,
+#'         `message` and `where` the violation(s) occurred.
+#' @references [CSP With Google](https://csp.withgoogle.com/docs/index.html)
 #' @export
 check_script_unsafe_inline <- function(csp_df) {
   csp_df <- ensure_csp_df(csp_df)
@@ -59,7 +56,7 @@ check_script_unsafe_inline <- function(csp_df) {
   }
 }
 
-# Checks if plain URL schemes (e.g. http:) are allowed in sensitive directives.
+# Checks if passed csp allows unsafe eval
 #' @rdname csp_security_checkers
 #' @export
 check_script_unsafe_eval <- function(csp_df) {
@@ -83,7 +80,7 @@ check_script_unsafe_eval <- function(csp_df) {
 URL_SCHEMES_CAUSING_XSS <- c("data:", "http:", "https:")
 XSS_DIRECTIVES <- c("script-src", "object-src", "base-uri")
 
-# Checks if csp contains wildcards in sensitive directives.
+# Checks if plain URL schemes (e.g. http:) are allowed in sensitive directives.
 #' @rdname csp_security_checkers
 #' @export
 check_plain_url_schemes <- function(csp_df) {
@@ -102,7 +99,7 @@ check_plain_url_schemes <- function(csp_df) {
   }
 }
 
-# Checks if csp contains wildcards in sensitive directives
+# Checks if csp contains wildcards in sensitive directives.
 #' @rdname csp_security_checkers
 #' @export
 check_wildcards <- function(csp_df) {
@@ -201,17 +198,8 @@ check_missing_directives <- function(csp_df) {
   }
 
 
-  script_src_missing <- FALSE
   script_src <- csp_df[csp_df[["directive"]] == "script-src",]
-  if (nrow(script_src)) {
-    none <- script_src[script_src[["value"]] == "'none'",]
-    if (nrow(none) == 0) {
-      self <- script_src[script_src[["value"]] == "'self'",]
-      if (nrow(self) == 0) script_src_missing <- TRUE
-    }
-  } else {
-    script_src_missing <- TRUE
-  }
+  script_src_missing <-  (nrow(script_src) == 0)
 
   if (script_src_missing) {
     findings[[length(findings)+1]] <- mk_finding(

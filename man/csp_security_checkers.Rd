@@ -2,7 +2,6 @@
 % Please edit documentation in R/findings.R
 \name{csp_security_checkers}
 \alias{csp_security_checkers}
-\alias{ensure_csp_df}
 \alias{check_script_unsafe_inline}
 \alias{check_script_unsafe_eval}
 \alias{check_plain_url_schemes}
@@ -14,8 +13,6 @@
 \alias{check_src_http}
 \title{Tests for insecure CSP settings}
 \usage{
-ensure_csp_df(csp_df)
-
 check_script_unsafe_inline(csp_df)
 
 check_script_unsafe_eval(csp_df)
