@@ -1,6 +1,7 @@
 
 [![Travis-CI Build
 Status](https://travis-ci.org/hrbrmstr/cspy.svg?branch=master)](https://travis-ci.org/hrbrmstr/cspy)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/hrbrmstr/cspy?branch=master&svg=true)](https://ci.appveyor.com/project/hrbrmstr/cspy) 
 [![Coverage
 Status](https://codecov.io/gh/hrbrmstr/cspy/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/cspy)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/cspy)](https://cran.r-project.org/package=cspy)
