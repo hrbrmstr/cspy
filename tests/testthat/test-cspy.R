@@ -30,5 +30,4 @@ structure(list(vulnerable = c(FALSE, TRUE), n = c(3122L, 2837L
 )), class = c("tbl_df", "tbl", "data.frame"), .Names = c("vulnerable",
 "n"), row.names = c(NA, -2L))
 
-library(waffle)
 
