@@ -2,7 +2,7 @@ Package: cspy
 Type: Package
 Title: Content Security Policy Decomposer & Evaluator
 Version: 2.6.0
-Date: 2019-03-06
+Date: 2019-03-10
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640")),
