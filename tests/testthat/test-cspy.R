@@ -15,7 +15,7 @@ expect_is(as.data.frame(x1), "data.frame")
 
 context("Validation works")
 
-expect_true(nrow(validate_csp(x1)) == 0)
+expect_true(nrow(validate_csp(x1)) > 0)
 expect_true(nrow(validate_csp(x2)) == 0)
 
 context("Testers work")
