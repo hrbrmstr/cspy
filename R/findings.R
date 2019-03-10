@@ -150,12 +150,12 @@ check_missing_directives <- function(csp_df) {
   }
 
   if (object_src_not_none) {
-    if (nrow(none) == 0) none <- data.frame(directive = "object-src", value = NA_character_)
+    if (nrow(object_src) == 0) object_src <- data.frame(directive = "object-src", value = NA_character_)
     findings[[length(findings)+1]] <- mk_finding(
-      category = "missing-directive",
+      category = "weak-directive",
       severity = "POSSIBLY-HIGH",
       message = "Can you restrict object-src to 'none'?",
-      where = none
+      where = object_src
     )
   }
 
